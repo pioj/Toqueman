@@ -797,18 +797,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1163125300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 990c362071e12ad4a8c79757da7fd14c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc14c5dce947d3e48a51e5ef174c9463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 318809322}
-  TouchIDColors: []
-  Limit: 1
-  RectArea:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
+  texto: {fileID: 1657179867}
 --- !u!4 &1163125302
 Transform:
   m_ObjectHideFlags: 0

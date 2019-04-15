@@ -70,8 +70,9 @@ namespace Toqueman
                             break;
                     }
                     //
-                    sprite.position = newtoquePOS[0];
+                    
                 }
+                sprite.position = newtoquePOS[0];
             }
         }
 
@@ -89,7 +90,8 @@ namespace Toqueman
 
         //Debug variables and properties for testing purposes
         private void DebugProperties() {
-            Debug.Log(sprite.position.ToString() );
+            Debug.Log(toquecount.ToString() );
+            Debug.Log(toques[0].ToString() );
         }
 
 
