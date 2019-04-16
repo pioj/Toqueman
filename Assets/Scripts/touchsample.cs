@@ -9,6 +9,7 @@ public class touchsample : MonoBehaviour
 
     public Transform sprite;
     public TMP_Text texto;
+    private Vector2 refOnScreen = Vector2.zero;
     Camera cam;
 
     void Start()
@@ -21,20 +22,20 @@ public class touchsample : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if UNITY_EDITOR_WIN
-            Vector2 refOnScreen = cam.ScreenToViewportPoint(Input.mousePosition);
+#if UNITY_EDITOR
+        refOnScreen = cam.ScreenToViewportPoint(Input.mousePosition);
 #endif
 #if UNITY_ANDROID
         if (Input.touchCount >= 1)
         {
-            Vector2 refOnSceen = cam.ScreenToViewportPoint(Input.GetTouch(0).position); //da porcentajes
-#endif
+            refOnScreen = cam.ScreenToViewportPoint(Input.GetTouch(0).position); //da porcentajes
         }
-
-        sprite.position = refOnScreen;
+#endif
+        Update_Common();
+    }
+      
+    void Update_Common() {
+        sprite.position = cam.ViewportToWorldPoint(refOnScreen) * Vector2.one;  //el vector2.one es un "truco" para poner a 0 su eje Z.
         texto.text = sprite.position.ToString();
     }
-
-
-
 }
